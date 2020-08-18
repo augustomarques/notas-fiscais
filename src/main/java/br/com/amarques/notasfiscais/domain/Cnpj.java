@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import br.com.amarques.notasfiscais.exception.InvalidCNPJException;
-import br.com.amarques.notasfiscais.formatters.CNPJFormatter;
 import br.com.amarques.notasfiscais.validators.CNPJValidate;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -24,6 +23,6 @@ public class Cnpj {
     }
 
     public String getCnpj() {
-        return CNPJFormatter.format(cnpj);
+        return cnpj;
     }
 }

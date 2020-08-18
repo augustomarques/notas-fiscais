@@ -14,8 +14,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "notas_fiscais")

@@ -13,8 +13,10 @@ import javax.persistence.Table;
 
 import br.com.amarques.notasfiscais.enums.TipoEmpresaEnum;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "empresas")
