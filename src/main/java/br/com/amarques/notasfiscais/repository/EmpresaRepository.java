@@ -15,7 +15,7 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
     @Query("SELECT e FROM Empresa e WHERE e.cnpj.cnpj = :cnpj")
     Optional<Empresa> findByCnpj(String cnpj);
 
-    @Query("SELECT CASE WHEN COUNT(nf) > 0 THEN true ELSE false END "
+    @Query("SELECT CASE WHEN COUNT(nf) > 0 THEN false ELSE true END "
             + "FROM NotaFiscal nf "
             + "WHERE nf.tomador = :empresa OR nf.prestador = :empresa")
     boolean canBeRemoved(@Param("empresa") Empresa empresa);
