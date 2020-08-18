@@ -15,7 +15,7 @@ public class CNPJFormatter {
         return new StringBuilder()
                 .append(cnpj.substring(0, 2)).append(".")
                 .append(cnpj.substring(2, 5)).append(".")
-                .append(cnpj.substring(5, 8)).append(".")
+                .append(cnpj.substring(5, 8)).append("/")
                 .append(cnpj.substring(8, 12)).append("-")
                 .append(cnpj.substring(12, 14))
                 .toString();
