@@ -1,5 +1,7 @@
 package br.com.amarques.notasfiscais.domain;
 
+import static br.com.amarques.notasfiscais.enums.TipoEmpresaEnum.PRESTADOR;
+import static br.com.amarques.notasfiscais.enums.TipoEmpresaEnum.TOMADOR;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -10,8 +12,6 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.amarques.notasfiscais.enums.TipoEmpresaEnum;
-
 class NotaFiscalTest {
 
     private static final Integer NUMERO_NF = 12345;
@@ -20,8 +20,8 @@ class NotaFiscalTest {
 
     @Test
     void shouldCreateNotaFiscal() {
-        Empresa empresaPrestadora = new Empresa("Razão Social", "27.414.368/0001-52", TipoEmpresaEnum.PRESTADOR);
-        Empresa empresaTomadora = new Empresa("Razão Social", "27.414.368/0001-52", TipoEmpresaEnum.TOMADOR);
+        Empresa empresaPrestadora = new Empresa("Razão Socia P", "27.414.368/0001-52", PRESTADOR);
+        Empresa empresaTomadora = new Empresa("Razão Social T", "35.437.352/0001-93", TOMADOR);
 
         NotaFiscal notaFiscal = new NotaFiscal(NUMERO_NF, DATA_NF, VALOR_NF);
         notaFiscal.setPrestador(empresaPrestadora);
