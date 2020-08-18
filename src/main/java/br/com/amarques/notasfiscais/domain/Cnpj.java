@@ -6,8 +6,10 @@ import javax.persistence.Embeddable;
 import br.com.amarques.notasfiscais.exception.InvalidCNPJException;
 import br.com.amarques.notasfiscais.validators.CNPJValidate;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode
 @Embeddable
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Cnpj {

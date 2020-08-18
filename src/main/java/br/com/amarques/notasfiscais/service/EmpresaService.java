@@ -1,7 +1,6 @@
 package br.com.amarques.notasfiscais.service;
 
 import java.text.MessageFormat;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -31,7 +30,7 @@ public class EmpresaService {
         List<Empresa> empresas = repository.findAll();
 
         if (CollectionUtils.isEmpty(empresas)) {
-            return Collections.emptyList();
+            return List.of();
         }
 
         return empresas.stream().map(EmpresaMapper::toDTO).collect(Collectors.toList());
