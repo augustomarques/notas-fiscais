@@ -10,7 +10,7 @@ public class CNPJValidate {
         try {
             cnpj = removeSpecialCharacters(cnpj);
 
-            if (isSequentialNumbers(cnpj)) {
+            if (isSequentialNumbers(cnpj) || cnpj.length() != 14) {
                 return false;
             }
 
@@ -18,9 +18,6 @@ public class CNPJValidate {
             int dig;
             String cnpjCalc = cnpj.substring(0, 12);
 
-            if (cnpj.length() != 14) {
-                return false;
-            }
             char[] chrCnpj = cnpj.toCharArray();
 
             for (int i = 0; i < 4; i++) {

@@ -2,6 +2,8 @@ package br.com.amarques.notasfiscais.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +47,7 @@ public class NotaFiscalResource {
     }
 
     @PostMapping
-    public ResponseEntity<SimpleEntityDTO> create(@RequestBody CreateUpdateNotaFiscalDTO dto) {
+    public ResponseEntity<SimpleEntityDTO> create(@Valid @RequestBody CreateUpdateNotaFiscalDTO dto) {
         log.debug("REST request to create an new NotaFiscal: {}", dto);
 
         SimpleEntityDTO simpleEntityDTO = service.create(dto);

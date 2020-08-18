@@ -2,6 +2,8 @@ package br.com.amarques.notasfiscais.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -47,7 +49,7 @@ public class EmpresaResource {
     }
 
     @PostMapping
-    public ResponseEntity<SimpleEntityDTO> create(@RequestBody CreateUpdateEmpresaDTO dto) {
+    public ResponseEntity<SimpleEntityDTO> create(@Valid @RequestBody CreateUpdateEmpresaDTO dto) {
         log.debug("REST request to create an new Empresa: {}", dto);
 
         SimpleEntityDTO simpleEntityDTO = service.create(dto);
@@ -56,7 +58,7 @@ public class EmpresaResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody CreateUpdateEmpresaDTO dto) {
+    public ResponseEntity<Void> update(@PathVariable Long id, @Valid @RequestBody CreateUpdateEmpresaDTO dto) {
         log.debug("REST request to update an Empresa [id: {0}] [dto: {1}]", id, dto);
 
         service.update(id, dto);
