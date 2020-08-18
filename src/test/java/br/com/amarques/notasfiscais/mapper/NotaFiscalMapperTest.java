@@ -26,7 +26,7 @@ class NotaFiscalMapperTest {
     private static final String DATA_NF_TEXT = "18/08/2020";
     private static final BigDecimal VALOR_NF = BigDecimal.TEN;
 
-    private static final Empresa PRESTADORA = new Empresa("Razão Socia Pl", "27.414.368/0001-52", PRESTADOR);
+    private static final Empresa PRESTADORA = new Empresa("Razão Socia P", "27.414.368/0001-52", PRESTADOR);
     private static final Empresa TOMADORA = new Empresa("Razão Social T", "35.437.352/0001-93", TOMADOR);
 
     @Test
