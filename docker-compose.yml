@@ -26,5 +26,6 @@ services:
             - DB_NAME=notasfiscais
             - DB_USERNAME=admin
             - DB_PASSWORD=Mud@r123
+            - PROFILE=prd
         ports: 
             - 8080:8080

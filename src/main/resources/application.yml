@@ -32,13 +32,16 @@ spring:
       enabled: true
     livereload:
       enabled: true
+  h2:
+    console:
+      enabled: true
   datasource:
-    url: jdbc:postgresql://${DB_LOCATION:localhost}:${DB_PORT:5432}/${DB_NAME:notasfiscais}
-    username: ${DB_USERNAME:admin}
-    password: ${DB_PASSWORD:123}
+    url: jdbc:h2:file:/tmp/h2/notasfiscais/notasfiscais;AUTO_SERVER=TRUE
+#    url: jdbc:h2:file:C:\Developer\H2\notasfiscais\notasfiscais;AUTO_SERVER=TRUE
+    username: sa
+    password: 123
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    database: POSTGRESQL
+    database: H2
     show-sql: true
     hibernate:
       ddl-auto: validate
@@ -47,6 +50,9 @@ spring:
 
 spring:
   profiles: prd
+  h2:
+    console:
+      enabled: false
   devtools:
     restart:
       enabled: false
