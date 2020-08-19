@@ -53,8 +53,6 @@ class NotaFiscalServiceTest {
 
     @Test
     void shouldReturnRegisteredNotaFiscal() {
-        //        CreateUpdateNotaFiscalDTO dto = new CreateUpdateNotaFiscalDTO(NUMERO_NF, DATA_NF_TEXT, VALOR_NF, 444L, 555L);
-
         when(repository.findById(ID)).thenReturn(Optional.of(buildNotaFiscal()));
 
         NotaFiscalDTO notaFiscalDTO = notaFiscalService.getById(ID);

@@ -19,6 +19,7 @@ import br.com.amarques.notasfiscais.dto.EmpresaDTO;
 import br.com.amarques.notasfiscais.dto.SimpleEntityDTO;
 import br.com.amarques.notasfiscais.dto.createupdare.CreateUpdateEmpresaDTO;
 import br.com.amarques.notasfiscais.service.EmpresaService;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,6 +32,7 @@ public class EmpresaResource {
     private final EmpresaService service;
 
     @GetMapping
+    @ApiOperation(value = "Retorna todas as Empresas")
     public ResponseEntity<List<EmpresaDTO>> getAll() {
         log.debug("REST request to get all Empresa");
 
@@ -40,6 +42,7 @@ public class EmpresaResource {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Busca uma Empresa pelo ID")
     public ResponseEntity<EmpresaDTO> getById(@PathVariable Long id) {
         log.debug("REST request to get an Empresa [id: {0}]", id);
 
@@ -49,6 +52,7 @@ public class EmpresaResource {
     }
 
     @PostMapping
+    @ApiOperation(value = "Cria uma nova Empresa")
     public ResponseEntity<SimpleEntityDTO> create(@Valid @RequestBody CreateUpdateEmpresaDTO dto) {
         log.debug("REST request to create an new Empresa: {}", dto);
 
@@ -58,6 +62,7 @@ public class EmpresaResource {
     }
 
     @PutMapping("/{id}")
+    @ApiOperation(value = "Atualiza uma Empresa")
     public ResponseEntity<Void> update(@PathVariable Long id, @Valid @RequestBody CreateUpdateEmpresaDTO dto) {
         log.debug("REST request to update an Empresa [id: {0}] [dto: {1}]", id, dto);
 
@@ -67,6 +72,7 @@ public class EmpresaResource {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation(value = "Remove uma Empresa")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         log.debug("REST request to delete an Empresa [id: {0}]", id);
 

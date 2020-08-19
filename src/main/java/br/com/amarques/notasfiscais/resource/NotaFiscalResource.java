@@ -17,6 +17,7 @@ import br.com.amarques.notasfiscais.dto.NotaFiscalDTO;
 import br.com.amarques.notasfiscais.dto.SimpleEntityDTO;
 import br.com.amarques.notasfiscais.dto.createupdare.CreateUpdateNotaFiscalDTO;
 import br.com.amarques.notasfiscais.service.NotaFiscalService;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,6 +30,7 @@ public class NotaFiscalResource {
     private final NotaFiscalService service;
 
     @GetMapping
+    @ApiOperation(value = "Retorna todas as Notas Fiscais")
     public ResponseEntity<List<NotaFiscalDTO>> getAll() {
         log.debug("REST request to get all NotaFiscal");
 
@@ -38,6 +40,7 @@ public class NotaFiscalResource {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation(value = "Retorna uma Nota Fiscal pelo seu ID")
     public ResponseEntity<NotaFiscalDTO> getById(@PathVariable Long id) {
         log.debug("REST request to get an NotaFiscal [id: {0}]", id);
 
@@ -47,6 +50,7 @@ public class NotaFiscalResource {
     }
 
     @PostMapping
+    @ApiOperation(value = "Cria uma nova Nota Fiscal")
     public ResponseEntity<SimpleEntityDTO> create(@Valid @RequestBody CreateUpdateNotaFiscalDTO dto) {
         log.debug("REST request to create an new NotaFiscal: {}", dto);
 
@@ -56,6 +60,7 @@ public class NotaFiscalResource {
     }
 
     @GetMapping("/empresas/{id}")
+    @ApiOperation(value = "Busca Notas Fiscais relacionadas a uma Empresa")
     public ResponseEntity<List<NotaFiscalDTO>> getAllByEmpresaId(@PathVariable Long id) {
         log.debug("REST request to get an NotaFiscal [id: {0}]", id);
 
