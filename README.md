@@ -15,7 +15,7 @@ Todas as rotas estão disponiveis no Swagger:
 
 # Stack:
 
- - Java (14.0.2) 
+ - Java (11) 
  - SpringBoot (2.3.3)
  - Docker (19.03.12)
  - Docker-Compose (1.26.2)
