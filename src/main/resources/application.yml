@@ -1,13 +1,10 @@
 spring:
   profiles:
-    active: test
+    active: prd
   jackson:
     default-property-inclusion: NON_NULL
   jpa:
     open-in-view: false
-server:
-  undertow:
-    worker-threads: 100
 
 ---
 
@@ -24,7 +21,7 @@ spring:
     database: H2
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
       
 ---
 
@@ -44,7 +41,7 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
 
 ---
 

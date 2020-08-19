@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class NotaFiscal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_pk")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "nota_fiscal_pk")
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
