@@ -1,0 +1,30 @@
+version: '3'
+services: 
+    db:
+        image: postgres:12.3
+        environment:
+            - POSTGRES_DB=notasfiscais
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=Mud@r123
+            - POSTGRES_PORT=5432
+            - DATABASE_HOST=db
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./data/db:/var/lib/postgresql/data
+            - ./sql:/docker-entrypoint-initdb.d
+    api:
+        build: .
+        restart: on-failure
+        depends_on: 
+            - db
+        links: 
+            - db
+        environment:
+            - DB_LOCATION=db
+            - DB_PORT=5432
+            - DB_NAME=notasfiscais
+            - DB_USERNAME=admin
+            - DB_PASSWORD=Mud@r123
+        ports: 
+            - 8080:8080
