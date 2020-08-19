@@ -17,11 +17,11 @@ import lombok.ToString;
 public class CreateUpdateEmpresaDTO {
 
     public final String fantasia;
-    @NotEmpty
+    @NotEmpty(message = "Razão Social é obrigatório")
     public final String razaoSocial;
-    @NotEmpty
+    @NotEmpty(message = "CNPJ é obrigatório")
     public final String cnpj;
-    @NotNull
+    @NotNull(message = "Tipo (TOMADOR ou PRESTADOR) é obrigatório")
     public final TipoEmpresaEnum tipo;
 
 }

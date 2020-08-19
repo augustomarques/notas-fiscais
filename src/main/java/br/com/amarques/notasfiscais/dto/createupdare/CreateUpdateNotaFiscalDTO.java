@@ -17,16 +17,16 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 public class CreateUpdateNotaFiscalDTO {
 
-    @NotNull
+    @NotNull(message = "O número é obrigatório")
     public final Integer numero;
-    @NotEmpty
+    @NotEmpty(message = "A data é obrigatória")
     public final String data;
-    @NotNull
+    @NotNull(message = "O valor é obrigatório")
     public final BigDecimal valor;
 
-    @NotNull
+    @NotNull(message = "O ID do tomador é obrigatório")
     public final Long tomadorId;
-    @NotNull
+    @NotNull(message = "O ID do prestador é obrigatório")
     public final Long prestadorId;
 
 }
